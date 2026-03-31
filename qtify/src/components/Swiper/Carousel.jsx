@@ -20,18 +20,23 @@ const Carousel = ({ albums }) => {
         breakpoints={{
           320: {
             slidesPerView: 2,
+      slidesPerGroup: 2,
           },
           640: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
           },
           768: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
+
           },
           1024: {
             slidesPerView: 6,
+            slidesPerGroup: 6,
           },
         }}
-        spaceBetween={'60'}
+        spaceBetween={60}
       >
         {
           albums.length > 0 && albums.map((album) => (
