@@ -1,10 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import 'swiper/css/autoplay'
-import styles from './Carousel.module.css'
 
 import SongCard from '../Card/Card';
 
@@ -14,7 +12,7 @@ const Carousel = ({ albums }) => {
   return (
     <>
       <Swiper
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Navigation]}
         navigation={true}
         pagination={{ clickable: true }}
         slidesOffsetBefore={50}

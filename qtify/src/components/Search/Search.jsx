@@ -37,7 +37,6 @@ const Listbox = styled("ul")(({ theme }) => ({
 function Search({ searchData, placeholder }) {
   const {
     getRootProps,
-    getInputLabelProps,
     value,
     getInputProps,
     getListboxProps,
@@ -57,6 +56,12 @@ function Search({ searchData, placeholder }) {
     navigate(`/album/${value.slug}`);
     //Process form data, call API, set state etc.
   };
+  const truncate = (str, maxLength) => {
+  if (!str) return "";
+  return str.length > maxLength
+    ? str.substring(0, maxLength) + "..."
+    : str;
+};
 
   return (
     <div style={{ position: "relative" }}>
@@ -99,7 +104,7 @@ function Search({ searchData, placeholder }) {
                   <p className={styles.albumTitle}>{option.title}</p>
 
                   <p className={styles.albumArtists}>
-                    {/* {truncate(artists.join(", "), 40)} */}
+                    {truncate(artists.join(", "), 40)}
                   </p>
                 </div>
               </li>
