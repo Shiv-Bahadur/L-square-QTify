@@ -15,8 +15,6 @@ const Carousel = ({ albums }) => {
         modules={[Pagination, Navigation]}
         navigation={true}
         pagination={{ clickable: true }}
-        slidesOffsetBefore={50}
-        slidesOffsetAfter={50}
         breakpoints={{
           320: {
             slidesPerView: 2,
