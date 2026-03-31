@@ -3,9 +3,7 @@ import styles from "./Search.module.css";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
 import {useAutocomplete} from "@mui/base";
 import { styled } from "@mui/system";
- import { truncate } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
-import { Tooltip } from "@mui/material";
 
 const Listbox = styled("ul")(({ theme }) => ({
   width: "100%",
@@ -55,6 +53,7 @@ function Search({ searchData, placeholder }) {
   const onSubmit = (e, value) => {
     e.preventDefault();
     console.log(value);
+    if (!value) return;
     navigate(`/album/${value.slug}`);
     //Process form data, call API, set state etc.
   };
@@ -92,7 +91,7 @@ function Search({ searchData, placeholder }) {
             }, []);
 
             return (
-              <li
+              <li key={option.slug}
                 className={styles.listElement}
                 {...getOptionProps({ option, index })}
               >
