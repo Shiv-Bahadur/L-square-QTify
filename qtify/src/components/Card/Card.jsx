@@ -8,7 +8,7 @@ const SongCard = ({ album }) => {
 
   return (
     <>
-      <Box sx={{ height: '232px', width: '159px',  }}>
+      <Box sx={{ height: '232px', width: '159px', margin:'auto'}}>
 
         <Card sx={{ height: '205px' }}>
           <CardActionArea>
@@ -23,7 +23,7 @@ const SongCard = ({ album }) => {
                 sx={{ objectFit: 'cover', overflow: 'hidden' }}
               />
               <Typography variant='p' component='h3' sx={{ width: '100%', position: 'absolute', top: '4%', textAlign: 'center' }}>{album.title}</Typography>
-              <Typography variant='p'  component="h5" sx={{ width: '100%', position: 'absolute', bottom: '1%', textAlign: 'center',color:'#FFFFFF' }}>{album.description}</Typography>
+              <Typography variant='p'  component="h6" sx={{ width: '100%', position: 'absolute', bottom: '1%', textAlign: 'center',color:'#FFFFFF' }}>{album.description}</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', height: '35px', width: '100%', background: '#FFFFFF' }}>
               <Chip label={album.follows ? `${album.follows} Follows`: `${album.likes} Likes`} size='small' sx={{ background: '#121212', padding: '4px 8px', color: '#FFFFFF', gap: '1px' }} />
